@@ -1,0 +1,13 @@
+---
+- id: pipenv-verify
+  name: verify pipfile.lock
+  description: Verifies the hash in Pipfile.lock is up-to-date.
+  entry: src/pipenv-verify.sh
+  language: script
+  files: ^Pipfile(\.lock)?$
+- id: make-test
+  name: make test
+  description: Runs make test
+  entry: src/make-test.sh
+  language: script
+  always_run: true
