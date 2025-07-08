@@ -10,7 +10,7 @@ repos:
       - id: trailing-whitespace
       - id: end-of-file-fixer
   - repo: https://github.com/frontierdigital/pre-commit-hooks
-    rev: refs/heads/add-uv-lock-check
+    rev: refs/heads/main
     hooks:
       - id: uv-lock-check
       - id: make-test
