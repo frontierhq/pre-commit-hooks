@@ -12,5 +12,5 @@ repos:
   - repo: https://github.com/frontierdigital/pre-commit-hooks
     rev: refs/heads/main
     hooks:
-      - id: pipenv-verify
+      - id: uv-lock-check
       - id: make-test
