@@ -1,10 +1,14 @@
+.DEFAULT_GOAL := install
+
 install:
-	pipenv install --dev
-	pipenv run pre-commit install
+ifeq ($(CI),true)
+	uv sync --frozen
+else
+	uv sync
+	uv run pre-commit install
+endif
 
-install_ci:
-	pipenv sync
+test: test.lint
 
-test:
-	# shellcheck scripts/*.sh
-	pipenv run yamllint .
+test.lint:
+	uv run yamllint .
